@@ -1,0 +1,43 @@
+.alojamentos {
+  padding: 20px;
+  background-color: rgba(210, 232, 227, 1);
+  border: 1px solid #000000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.alojamento-item {
+  display: flex;
+  justify-content: space-between; /* Alinha a informação e os botões */
+  align-items: center; /* Alinha verticalmente ao centro */
+  height: 65px;
+  border:  1px solid black;
+  background-color: white;
+  padding: 10px; /* Espaçamento interno */
+}
+
+.buttons {
+  display: flex;
+  gap: 20px; /* Espaço entre os botões */
+}
+
+button {
+  padding: 12.5px 30px;
+  border: 0;
+  border-radius: 100px;
+  background-color: #007566;
+  color: #ffffff;
+  font-weight: bold;
+  transition: all 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button:hover {
+  box-shadow: 0 0 20px #6fc5ff50;
+  transform: scale(1.1);
+}
+
+h1 {
+  text-align: center;
+}

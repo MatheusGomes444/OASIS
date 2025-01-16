@@ -1,0 +1,27 @@
+<h1>Alojamentos</h1>
+
+<div *ngIf="errorMessage" class="error-message">
+  {{ errorMessage }}
+</div>
+
+<div *ngIf="alojamentos.length > 0; else carregando">
+  <div *ngFor="let alojamento of alojamentos" class="alojamento-item">
+    <div class="info">
+      {{ alojamento.nome }} | {{ alojamento.quantidadeMoradores }}/{{ alojamento.capacidadeMaxima }}
+    </div>
+    <div class="buttons">
+      <button routerLink="/cadastrarmoradores">Novo Morador</button>
+      <button [routerLink]="['/detalhesalojamento', alojamento.id]">Detalhes</button>
+
+     
+    </div>
+  </div>
+</div>
+
+<ng-template #carregando>
+  <p>Carregando alojamentos...</p>
+</ng-template>
+
+
+
+  

@@ -1,0 +1,75 @@
+.container {
+ border: 1px solid black;
+ 
+  justify-content: center;
+  width: 950px;
+}
+
+.morador-item {
+  display: flex;
+  justify-content: space-between; /* Alinha a informação e os botões */
+  align-items: center; /* Alinha verticalmente ao centro */
+  height: 65px;
+  border: solid black;
+  background-color: white;
+  padding: 10px; /* Definindo uma largura fixa para cada item */
+}
+
+.morador-info {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.morador-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+ 
+}
+
+button {
+  padding: 10.10px 9px;
+  border: 0;
+  border-radius: 10px;
+  background-color: #007566;
+  color: #ffffff;
+  font-weight: Bold;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+button:hover {
+
+  box-shadow: 0 0 20px #6fc5ff50;
+  transform: scale(1.1);
+}
+.container{
+  width: 200rem;
+ 
+}
+h1{
+  text-align: center;
+}
+.input[type = "text"] {
+  display: block;
+  color: rgb(0, 0, 0);
+  background: linear-gradient(142.99deg, rgba(217, 217, 217, 0.63) 15.53%, rgba(243, 243, 243, 0.63) 88.19%);
+  box-shadow: 0px 12px 24px -1px rgba(0, 0, 0,0.18);
+
+  border-color: rgba(188, 10, 167, 0);
+  border-radius: 50px;
+  block-size: 20px;
+  margin: 7px auto;
+  padding: 18px 15px;
+  outline: none;
+  text-align: center;
+  width: 200px;
+  transition: 1s;
+}
+
+
+.input[type = "text"]:focus {
+  width: 280px;
+
+}

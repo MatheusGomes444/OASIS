@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="left-section">
+    <h1>{{ nomeAlojamento }}</h1>
+  </div>
+
+  <div class="right-section">
+    <h2>Informações do Alojamento</h2>
+    <div>
+      <p><strong>Pet:</strong> {{ pet }}</p>
+      <p><strong>Sexo:</strong> {{ sexo }}</p>
+      <p><strong>Pertences:</strong> {{ pertences }}</p>
+      <p><strong>Refeições:</strong> {{ refeicoes }}</p>
+      <p><strong>Equipe:</strong> {{ equipe }}</p>
+      <p><strong>Email:</strong> {{ email }}</p>
+      <p><strong>Telefone:</strong> {{ telefone }}</p>
+    </div>
+
+    <div class="button-container">
+      <button (click)="editarInformacoes()">Editar Informações</button>
+      <button (click)="listarMoradores()">Listar Moradores</button>
+    </div>
+
+    <!-- Campos de edição que aparecem somente após clicar no botão "Editar Informações" -->
+    <div *ngIf="editando">
+      <form>
+        <div class="form-group">
+          <label for="">Nome do Alojamento:</label>
+          <input type="text" id="nomeAlojamento" [(ngModel)]="nomeAlojamento" name="nomeAlojamento" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="pet">Pet:</label>
+          <input type="text" id="pet" [(ngModel)]="pet" name="pet" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="sexo">Sexo:</label>
+          <input type="text" id="sexo" [(ngModel)]="sexo" name="sexo" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="pertences">Pertences:</label>
+          <input type="text" id="pertences" [(ngModel)]="pertences" name="pertences" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="refeicoes">Refeições:</label>
+          <input type="text" id="refeicoes" [(ngModel)]="refeicoes" name="refeicoes" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="equipe">Equipe:</label>
+          <input type="text" id="equipe" [(ngModel)]="equipe" name="equipe" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" [(ngModel)]="email" name="email" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="telefone">Telefone:</label>
+          <input type="text" id="telefone" [(ngModel)]="telefone" name="telefone" class="form-control">
+        </div>
+      </form>
+        
+      <button (click)="atualizarInformacoes()">Atualizar Informações</button>
+    </div>
+  </div>
+</div>

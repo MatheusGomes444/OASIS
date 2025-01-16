@@ -1,0 +1,31 @@
+<div *ngIf="loading">Carregando moradores...</div>
+<div *ngIf="!loading">
+  <h1>{{ nomeAlojamento }}</h1>
+  <div class="container">
+  <div *ngIf="moradores.length === 0">Nenhum morador encontrado.</div>
+  <div *ngIf="moradores.length > 0">
+   
+   
+    
+      <div *ngFor="let morador of moradores ">
+        <div class="morador-item">
+        <div class="morador-info">
+        {{ morador.nome }} - {{ morador.cpf }} - {{ morador.id }}
+      </div>
+      <div class="morador-actions">
+
+        <button 
+    (click)="detalhesMorador(morador.id)" 
+    class="btn-detalhes"
+  >
+    Detalhes
+  </button>
+  
+        <button (click)="localizacao(morador)" routerLink="Localização" class="btn-localizacao">Localização</button>
+      </div>
+    </div>
+  </div>
+  
+  </div>
+</div>
+</div>

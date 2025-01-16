@@ -1,0 +1,83 @@
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.card {
+  background-color: rgba(240, 240, 240, 1);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.details-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.details-list li {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+h3 {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.status {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.status.active {
+  background-color: #28a745;
+  color: white;
+}
+
+.status.inactive {
+  background-color: #dc3545;
+  color: white;
+}
+
+h1 {
+  margin-top: 20px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+ul {
+  margin: 20px 0;
+}
+
+li {
+  font-size: 1rem;
+}
+.button-container {
+  display: flex;
+  gap: 10px; /* Espaçamento entre os botões */
+  margin-top: 20px;
+}
+
+button {
+  padding: 5px 10px; /* Reduz o tamanho do botão */
+  border: 0;
+  border-radius: 10px;
+  background-color: #007566;
+  color: #ffffff;
+  font-weight: bold;
+  transition: all 0.5s;
+}
+
+button:hover {
+  box-shadow: 0 0 20px#007566;
+  transform: scale(1.1);
+}

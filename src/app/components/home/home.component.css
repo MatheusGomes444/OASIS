@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box; /* Adiciona box-sizing para facilitar o controle de larguras e alturas */
+  margin: 0; /* Remove margens padrão */
+  padding: 0; /* Remove padding padrão */
+
+}
+
+.container-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Permite que os cards se movam para a próxima linha se necessário */
+  height: auto; /* Ajusta a altura conforme necessário */
+  padding: 20px; /* Adiciona espaçamento interno */
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Permite que os cards se movam para a próxima linha se necessário */
+  max-width: 1200px;
+}
+
+.card {
+  position: relative; /* Necessário para o posicionamento absoluto do h1 e descrição */
+  width: 260px;
+  height: 350px; /* Ajusta a altura para melhor proporção */
+  margin: 15px; /* Espaçamento entre os cards */
+  border-radius: 15px; /* Arredondamento dos cantos */
+  background: rgba(33, 33, 33, 0.8); /* Fundo semi-transparente */
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Garante que nada saia do card */
+  transition: transform 0.2s, background 0.2s; /* Adiciona transição suave */
+}
+
+
+
+.card h1 {
+  position: absolute; /* Posiciona o título sobre a imagem */
+  top: 50%; /* Ajusta a posição vertical do título */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta a centralização */
+  color: white; /* Cor do texto */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para melhor legibilidade */
+  font-size: 2rem; /* Tamanho da fonte */
+  background: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+  padding: 5px 10px; /* Adiciona espaço ao redor do texto */
+  border-radius: 5px; /* Arredonda os cantos do fundo */
+  z-index: 1; /* Garante que o texto fique acima da imagem */
+
+}
+
+.card:hover {
+  transform: scale(1.05); /* Aumenta o tamanho do card ao passar o mouse */
+  background: rgba(33, 33, 33, 0.9);
+
+}
+
+.card img {
+  height: 100%; /* Ajusta a altura da imagem */
+  width: 100%; /* Largura total do card */
+  border-radius: 15px 15px 0 0; /* Arredondamento dos cantos superiores */
+  object-fit: cover; /* Garante que a imagem preencha o espaço sem distorção */
+  opacity: 0.7; /* Ajusta a transparência da imagem */
+  transition: opacity 0.2s; /* Transição suave para a mudança de opacidade */
+}
+
+.card img:hover {
+  opacity: 100; /* Torna a imagem completamente opaca ao passar o mouse */
+}
+
+.footer {
+  text-align: center; /* Centraliza o texto na seção de contatos */
+  padding: 0px 25rem; /* Reduz o espaçamento interno */
+  background-color: rgb(0, 117, 102); /* Fundo semi-transparente */
+
+  margin-top: 20px; /* Espaçamento acima da seção de contatos */
+}
+
+.footer h2.title {
+  font-size: 1.5rem; /* Reduz o tamanho do título */
+  margin-bottom: 10px; /* Reduz o espaçamento abaixo do título */
+  color: #fff;
+}
+
+.footer ul {
+  display: flex;
+
+  list-style-type: none; /* Remove os marcadores da lista */
+  padding: 0; /* Remove o padding da lista */
+
+}
+
+.footer li {
+  margin: 10px ; /* Reduz o espaçamento entre os itens da lista */
+
+}
+
+.footer a {
+  color: #ffffff; /* Cor dos links */
+  text-decoration: none; /* Remove o sublinhado dos links */
+  transition: color 0.3s; /* Transição suave para a mudança de cor */
+}
+
+.footer a:hover {
+  color: #81c784; /* Cor dos links ao passar o mouse */
+}

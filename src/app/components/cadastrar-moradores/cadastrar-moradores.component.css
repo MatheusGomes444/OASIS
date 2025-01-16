@@ -1,0 +1,118 @@
+.container {
+  width: 100%;
+  max-width: 1220px;
+  margin: 40px auto;
+  padding: 30px; /* Padding interno para as laterais */
+  border: 1px solid #000000;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: rgb(210, 232, 227);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px; /* Maior espaçamento abaixo do título */
+  font-weight: bold;
+}
+
+.form-group {
+  margin-bottom: 30px; /* Aumentei o espaçamento entre os itens */
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold; /* Negrito nos rótulos */
+}
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="number"], input[type="date"], input[type="Sexo"], select {
+  width: 100%;
+  height: 40px;
+  padding: 10px; /* Aumentei o padding para dar mais espaço dentro dos campos */
+  border: none;
+  border-bottom: 1px solid #000000;
+  background-color: rgb(210, 232, 227);
+  margin-bottom: 25px; /* Aumentei o espaçamento entre os campos */
+  font-weight: bold; /* Letras em negrito dentro dos campos */
+}
+
+button[type="submit"], button[type="button"] {
+  padding: 10px 15px; /* Reduz o tamanho do botão */
+  border: 0;
+  border-radius: 10px;
+  background-color: #007566;
+  color: #ffffff;
+  font-weight: bold;
+  transition: all 0.5s;
+}
+
+button[type="submit"]:hover, button[type="button"]:hover {
+  padding: 5px 10px; /* Reduz o tamanho do botão */
+  border: 0;
+  border-radius: 10px;
+  background-color: #007566;
+  color: #ffffff;
+  font-weight: bold;
+  transition: all 0.5s;
+}
+
+.primeira, .segunda, .terceira {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px; /* Aumentei o espaçamento entre os itens */
+}
+
+.primeira .form-group, .segunda .form-group, .terceira .form-group {
+  width: 30%;
+}
+
+.terceira .form-group {
+  width: 100%; /* O campo de Telefone ocupa 100% da largura na seção meio */
+}
+button:hover {
+  box-shadow: 0 0 20px #6fc5ff50;
+  transform: scale(1.1);
+}
+.btnbtn {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 30px; /* Maior espaçamento entre o formulário e os botões */
+}
+
+select {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #000000;
+  background-color: rgb(210, 232, 227);
+  margin-bottom: 25px; /* Maior espaçamento entre o campo e o próximo */
+  font-weight: bold; /* Letras em negrito dentro do select */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .form-group {
+    margin-bottom: 20px; /* Menor espaçamento entre os campos em telas menores */
+  }
+
+  .primeira, .segunda, .terceira {
+    display: block;
+    width: 100%;
+  }
+
+  .primeira .form-group, .segunda .form-group, .terceira .form-group {
+    width: 100%;
+  }
+
+  .btnbtn {
+    flex-direction: column; /* Botões ficam em coluna nas telas menores */
+    align-items: center;
+    gap: 10px;
+  }
+
+  button[type="submit"], button[type="button"] {
+    width: 100%; /* Botões ocupam 100% da largura em telas menores */
+  }
+}

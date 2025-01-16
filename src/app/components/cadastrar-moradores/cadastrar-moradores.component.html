@@ -1,0 +1,126 @@
+<h1>Cadastrar Moradores</h1>
+
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="cadastrarMorador()">
+    <!-- Sessão de cima -->
+    <div class="primeira">
+      <div class="form-group">
+        <label for="Nome">Nome:</label>
+        <input
+          type="text"
+          formControlName="Nome"
+          id="Nome"
+          class="form-control"
+        />
+      </div>
+      <div class="form-group">
+        <label for="CPF">CPF:</label>
+        <input
+          type="text"
+          formControlName="CPF"
+          id="CPF"
+          class="form-control"
+        />
+      </div>
+      <div class="form-group">
+        <label for="RG">RG:</label>
+        <input
+          type="text"
+          formControlName="RG"
+          id="RG"
+          class="form-control"
+        />
+      </div>
+     
+    </div>
+
+    <!-- Sessão do meio -->
+    <div class="segunda">
+      <div class="form-group">
+        <label for="Endereco">Endereço:</label>
+        <input
+          type="text"
+          formControlName="Endereco"
+          id="Endereco"
+          class="form-control"
+        />
+      </div>
+      <div class="form-group">
+        <label for="Telefone">Telefone:</label>
+        <input
+          type="text"
+          formControlName="Telefone"
+          id="Telefone"
+          class="form-control"
+        />
+      </div>
+      <div class="form-group">
+        <label for="Sexo">Sexo:</label>
+        <input
+          type="text"
+          formControlName="Sexo"
+          id="Sexo"
+          class="form-control"
+        />
+      </div>
+    </div>
+
+    <!-- Sessão final -->
+    <div class="terceira">
+      <div class="form-group">
+        <label for="Idade">Idade:</label>
+        <input
+          type="number"
+          formControlName="Idade"
+          id="Idade"
+          class="form-control"
+        />
+      </div>
+      <div class="form-group">
+        <label for="Nacionalidade">Nacionalidade:</label>
+        <input
+          type="text"
+          formControlName="Nacionalidade"
+          id="Nacionalidade"
+          class="form-control"
+        />
+      </div>
+      <div class="form-group">
+        <label for="Observacoes">Observações:</label>
+        <input
+          type="text"
+          formControlName="Observacoes"
+          id="Observacoes"
+          class="form-control"
+        />
+      </div>
+    </div>
+
+    <!-- Campo Alojamento -->
+    <div class="form-group">
+      <label for="AlojamentoId">Alojamento:</label>
+      <select formControlName="AlojamentoId" id="AlojamentoId" class="form-control">
+        <option *ngFor="let alojamento of alojamentos" [value]="alojamento.id">
+          {{ alojamento.nome }}
+        </option>
+      </select>
+    </div>
+
+    <!-- Botões -->
+    <div class="btnbtn">
+      <button
+        type="submit"
+        class="btn btn-primary"
+      >
+        Salvar
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="voltar()"
+      >
+        Voltar
+      </button>
+    </div>
+  </form>
+</div>

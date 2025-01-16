@@ -1,0 +1,95 @@
+.container {
+  width: 100%;
+  height: auto;
+  margin: 20px auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-section {
+  flex: 1;
+  text-align: center;
+  padding-right: 20px;
+}
+
+.right-section {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  padding: 20px;
+  background-color: #d2e8e3;
+  border-radius: 8px;
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+input[type="text"]:disabled {
+  background-color: #f5f5f5;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px; /* Espaçamento entre os botões */
+  margin-top: 20px;
+}
+
+button {
+  padding: 5px 10px; /* Reduz o tamanho do botão */
+  border: 0;
+  border-radius: 10px;
+  background-color: #007566;
+  color: #ffffff;
+  font-weight: bold;
+  transition: all 0.5s;
+}
+
+button:hover {
+  box-shadow: 0 0 20px #6fc5ff50;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left-section,
+  .right-section {
+    flex: 1;
+    margin-bottom: 20px;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+}

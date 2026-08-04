@@ -6,17 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  username: string | null = null;
+
+  username: string = '';
 
   ngOnInit(): void {
-    // Recuperar o nome de usuário do localStorage
-    this.username = localStorage.getItem('username');
-    
-    // Exibir alerta de boas-vindas se o nome de usuário estiver disponível
-    if (this.username) {
-      alert(`Bem-vindo, ${this.username}!`);
-    } else {
-      alert('Bem-vindo ao nosso site!');
-    }
+
+    this.username = localStorage.getItem('username') || 'Administrador';
+
   }
+
 }

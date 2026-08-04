@@ -1,29 +1,326 @@
-<div class="container-center">
-  <div class="card-container">
-    <a href="/cadastrarmoradores" class="card">
-      <img src="https://www.meon.com.br/source/files/c/147564/moradores_de_rua-069646_1028-679-0-0.jpg" alt="">
-      <h1>Novo</h1>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="dashboard">
 
-    </a>
+    <!-- HERO -->
 
-    <a href="/alojamentos" class="card">
-      <img src="https://images.adsttc.com/media/images/6572/251f/96f8/0c58/98b0/a1c4/large_jpg/casa-de-acogida-y-comedor-comunitario-side-fx-arquitectura_9.jpg?1701979471" alt="">
-      <h1>Alojamentos</h1>
+    <section class="hero">
 
-    </a>
+        <div class="hero-content">
 
-    <a href="/moradores" class="card">
-      <img src="assets/img/AlbergueBed.jpg" alt="">
-      <h1>Moradores</h1>
+            <div>
 
-    </a>
-   <!--
-       <a href="/albergue" class="card">
-      <img src="https://96fmbauru.com.br/wp-content/uploads/2023/06/Albergue-carrossel-quem-somos.jpg" alt="">
-      <h1>Meu Albergue</h1>
+                <span class="badge">
 
-    </a>-->
-  </div>
+                    👋 Bem-vindo de volta
+
+                </span>
+
+                <h1>
+
+                    {{username || 'Administrador'}}
+
+                </h1>
+
+                <p>
+
+                    Gerencie moradores, alojamentos, vagas e todo o sistema em um único lugar.
+
+                </p>
+
+            </div>
+
+            <div class="hero-buttons">
+
+                <button class="primary-btn" routerLink="/cadastrarmoradores">
+
+                    <span class="material-icons">
+                        add
+                    </span>
+
+                    Novo Morador
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- KPIS -->
+
+    <section class="kpis">
+
+        <div class="kpi-card">
+
+            <div class="kpi-icon green">
+
+                <span class="material-icons">
+
+                    groups
+
+                </span>
+
+            </div>
+
+            <div class="kpi-info">
+
+                <small>Total de moradores</small>
+
+                <h2>158</h2>
+
+                <span class="positive">
+
+                    +12 este mês
+
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="kpi-card">
+
+            <div class="kpi-icon blue">
+
+                <span class="material-icons">
+
+                    holiday_village
+
+                </span>
+
+            </div>
+
+            <div class="kpi-info">
+
+                <small>Alojamentos</small>
+
+                <h2>34</h2>
+
+                <span>
+
+                    6 ativos
+
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="kpi-card">
+
+            <div class="kpi-icon orange">
+
+                <span class="material-icons">
+
+                    bed
+
+                </span>
+
+            </div>
+
+            <div class="kpi-info">
+
+                <small>Vagas Livres</small>
+
+                <h2>12</h2>
+
+                <span>
+
+                    Disponíveis
+
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="kpi-card">
+
+            <div class="kpi-icon red">
+
+                <span class="material-icons">
+
+                    warning
+
+                </span>
+
+            </div>
+
+            <div class="kpi-info">
+
+                <small>Pendências</small>
+
+                <h2>5</h2>
+
+                <span class="negative">
+
+                    Atenção
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- MÓDULOS -->
+
+    <section class="modules-section">
+
+        <div class="section-header">
+
+            <h2>
+
+                Módulos do Sistema
+
+            </h2>
+
+            <span>
+
+                Acesso rápido
+
+            </span>
+
+        </div>
+
+        <div class="modules">
+
+            <!-- CARD -->
+
+            <a routerLink="/cadastrarmoradores" class="module-card">
+
+                <div class="module-top">
+
+                    <div class="module-icon green">
+
+                        <span class="material-icons">
+
+                            person_add
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <h3>
+
+                    Novo Morador
+
+                </h3>
+
+                <p>
+
+                    Cadastre novos moradores com rapidez e segurança.
+
+                </p>
+
+               <div class="module-footer">
+
+    <span>Abrir módulo</span>
+
+    <div class="arrow">
+        <span class="material-icons">
+            arrow_forward
+        </span>
+    </div>
+
 </div>
 
+            </a>
 
+            <!-- CARD -->
+
+            <a routerLink="/moradores" class="module-card">
+
+                <div class="module-top">
+
+                    <div class="module-icon blue">
+
+                        <span class="material-icons">
+
+                            groups
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <h3>
+
+                    Moradores
+
+                </h3>
+
+                <p>
+
+                    Consulte, edite e acompanhe todos os moradores.
+
+                </p>
+
+             <div class="module-footer">
+
+    <span>Abrir módulo</span>
+
+    <div class="arrow">
+        <span class="material-icons">
+            arrow_forward
+        </span>
+    </div>
+
+</div>
+
+            </a>
+
+            <!-- CARD -->
+
+            <a routerLink="/alojamentos" class="module-card">
+
+                <div class="module-top">
+
+                    <div class="module-icon purple">
+
+                        <span class="material-icons">
+
+                            holiday_village
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <h3>
+
+                    Alojamentos
+
+                </h3>
+
+                <p>
+
+                    Controle ocupações, vagas e movimentações.
+
+                </p>
+
+              <div class="module-footer">
+
+    <span>Abrir módulo</span>
+
+    <div class="arrow">
+        <span class="material-icons">
+            arrow_forward
+        </span>
+    </div>
+
+</div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+</div>

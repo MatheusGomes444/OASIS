@@ -1,121 +1,144 @@
 /* ==========================================================
-   HEADER PRINCIPAL
-========================================================== */
-/* ==========================================================
-   HEADER PRINCIPAL (Atualizado para Full-Width)
+   FAIXA SUPERIOR (HEADER FIXO)
 ========================================================== */
 .header-oasis {
-  background-color: #0F766E; /* Cor primária do dashboard */
-  padding: 0.5rem 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  position: fixed; /* Header fixo no topo */
+  height: 64px;
+  background-color: #0F766E;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  z-index: 1000;
+  right: 0;
+  z-index: 1020;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
-/* Container que preenche a tela toda */
-.container-oasis {
+.header-left, .header-right {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  width: 100%;
-  /* REMOVIDO: max-width: 1200px; */
-  /* REMOVIDO: margin: 0 auto; */
-  padding: 0 30px; /* Padding lateral para não colar nas bordas */
 }
 
-/* O restante do CSS do header (logo-text, nav-icon-btn, dropdown, etc.) permanece o mesmo */
+.menu-toggle-btn {
+  margin-right: 18px !important;
+}
 
-/* Texto do Logo */
 .logo-text {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 800;
   color: #FFFFFF;
   margin: 0;
   letter-spacing: -0.5px;
-  text-decoration: none;
+  user-select: none;
 }
 
-/* ==========================================================
-   ÍCONES DO HEADER
-========================================================== */
 .nav-icon-btn {
   color: rgba(255, 255, 255, 0.9);
+  padding: 8px;
+  border: none;
   background: transparent;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
-  text-decoration: none !important;
+  border-radius: 8px;
   cursor: pointer;
-}
-
-.nav-icon-btn:hover {
-  color: #FFFFFF;
-  opacity: 1;
-  transform: scale(1.08);
-}
-
-.nav-icon-btn .material-icons {
-  font-size: 26px; /* Tamanho proporcional e nítido */
-}
-
-/* ==========================================================
-   MENU DROPDOWN ESTILIZADO
-========================================================== */
-.dropdown-menu {
-  border: none;
-  border-radius: 12px;
-  margin-top: 15px; /* Espaço para o header fixo */
-  padding: 10px 0;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15); /* Sombra suave */
-}
-
-.dropdown-item {
-  display: flex;
-  align-items: center;
-  padding: 12px 20px;
-  font-weight: 600;
-  color: #1F2937; /* Cor do texto principal */
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.dropdown-item:hover {
-  background-color: #EAF9F6; /* Cor primária super clara */
-  color: #0F766E; /* Cor primária */
+.nav-icon-btn:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
 }
 
-.dropdown-icon {
-  font-size: 20px !important;
-  margin-right: 12px;
-  color: #6B7280; /* Cor do texto secundário */
-  transition: color 0.2s ease;
+.nav-icon-btn .material-icons {
+  font-size: 26px;
 }
 
-.dropdown-item:hover .dropdown-icon {
-  color: #0F766E;
+.profile-btn {
+  margin-right: 10px;
 }
 
 /* ==========================================================
-   RESPONSIVIDADE
+   MENU LATERAL (VERDE OÁSIS)
 ========================================================== */
-@media (max-width: 1200px) {
-  .container-oasis {
-    max-width: 100%;
-    padding: 0 25px;
-  }
+.sidebar-oasis {
+  width: 260px;
+  background-color: #0F766E;
+  position: fixed;
+  top: 64px;
+  bottom: 0;
+  left: 0;
+  z-index: 1010;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 16px rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-oasis.open {
+  transform: translateX(0);
+}
+
+.sidebar-nav {
+  padding: 20px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 18px;
+  color: rgba(255, 255, 255, 0.88);
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none !important;
+  border-radius: 10px;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.sidebar-item:hover, .sidebar-item.active {
+  background-color: rgba(255, 255, 255, 0.18);
+  color: #FFFFFF;
+  transform: translateX(3px);
+}
+
+.sidebar-icon {
+  font-size: 22px !important;
+  margin-right: 14px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.sidebar-item:hover .sidebar-icon, .sidebar-item.active .sidebar-icon {
+  color: #FFFFFF;
+}
+
+.sidebar-divider {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.15);
+  margin: 10px 0;
+}
+
+.highlight-item {
+  background-color: rgba(255, 255, 255, 0.12);
 }
 
 @media (max-width: 768px) {
   .header-oasis {
-    padding: 0.4rem 0;
+    padding: 0 16px;
+    height: 58px;
   }
+  
+  .sidebar-oasis {
+    top: 58px;
+    width: 240px;
+  }
+  
   .logo-text {
-    font-size: 24px;
-  }
-  .container-oasis {
-    padding: 0 18px;
+    font-size: 22px;
   }
 }

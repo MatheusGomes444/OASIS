@@ -1,4 +1,9 @@
-<app-header></app-header>
-<div class="container"></div>
-<router-outlet></router-outlet>
+<div class="app-wrapper" [class.sidebar-open]="isSidebarOpen">
+  
+  <app-header (sidebarToggled)="isSidebarOpen = $event"></app-header>
 
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+
+</div>

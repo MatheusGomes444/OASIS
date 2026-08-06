@@ -1,49 +1,49 @@
-<!-- Link dos Ícones Material Icons (Pode ser mantido aqui ou no index.html global) -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-<nav class="navbar navbar-expand-lg header-oasis">
-  <div class="container-oasis"> <!-- Usando container customizado para alinhar com o dashboard -->
-    
-    <!-- Lado Esquerdo: Menu Dropdown + Logo -->
-    <div class="d-flex align-items-center">
-      <!-- Menu Dropdown -->
-      <div class="nav-item dropdown mr-3 me-3">
-        <button class="btn btn-link nav-icon-btn p-0 border-0" type="button" id="navbarDropdown" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Menu Principal">
-          <i class="material-icons">menu</i>
-        </button>
-        <div class="dropdown-menu shadow" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" routerLink="/albergue">
-            <i class="material-icons dropdown-icon">home</i> Meu Albergue
-          </a>
-          <a class="dropdown-item" routerLink="/moradores">
-            <i class="material-icons dropdown-icon">people</i> Moradores
-          </a>
-          <a class="dropdown-item" routerLink="/alojamentos">
-            <i class="material-icons dropdown-icon">hotel</i> Alojamentos
-          </a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" routerLink="/cadastrarmoradores">
-            <i class="material-icons dropdown-icon">person_add</i> Cadastrar Moradores
-          </a>
-        </div>
-      </div>
-
-      <!-- Texto Logo Oasis -->
-      <a class="navbar-brand m-0" href="#">
-        <h1 class="logo-text">OÁSIS</h1>
-      </a>
-    </div>
-
-    <!-- Lado Direito: Ações do Usuário -->
-    <div class="d-flex align-items-center header-actions">
-      <button class="btn btn-link nav-icon-btn p-0 border-0 mr-3 me-3" title="Perfil do Administrador">
-        <i class="material-icons">person</i>
-      </button>
-      <button class="btn btn-link nav-icon-btn p-0 border-0" title="Sair do Sistema">
-        <i class="material-icons">logout</i>
-      </button>
-    </div>
-
+<!-- FAIXA SUPERIOR -->
+<header class="header-oasis">
+  <div class="header-left">
+    <button class="btn nav-icon-btn menu-toggle-btn" (click)="toggleSidebar()" type="button" title="Menu">
+      <i class="material-icons">menu</i>
+    </button>
+    <a class="navbar-brand m-0 d-flex align-items-center" href="#">
+      <h1 class="logo-text">OÁSIS</h1>
+    </a>
   </div>
-</nav>
-<!-- Removemos a div faixa, a sombra da navbar faz o papel de separador -->
+
+  <div class="header-right">
+    <button class="btn nav-icon-btn profile-btn" type="button" title="Perfil">
+      <i class="material-icons">person</i>
+    </button>
+    <button class="btn nav-icon-btn logout-btn" type="button" title="Sair">
+      <i class="material-icons">logout</i>
+    </button>
+  </div>
+</header>
+
+<!-- MENU LATERAL (SIDEBAR VERDE) -->
+<aside class="sidebar-oasis" [class.open]="isSidebarOpen">
+  <nav class="sidebar-nav">
+    <a class="sidebar-item" routerLink="/albergue" routerLinkActive="active" (click)="autoCloseOnMobile()">
+      <i class="material-icons sidebar-icon">home</i>
+      <span>Meu Albergue</span>
+    </a>
+    
+    <a class="sidebar-item" routerLink="/moradores" routerLinkActive="active" (click)="autoCloseOnMobile()">
+      <i class="material-icons sidebar-icon">people</i>
+      <span>Moradores</span>
+    </a>
+    
+    <a class="sidebar-item" routerLink="/alojamentos" routerLinkActive="active" (click)="autoCloseOnMobile()">
+      <i class="material-icons sidebar-icon">hotel</i>
+      <span>Alojamentos</span>
+    </a>
+
+    <div class="sidebar-divider"></div>
+
+    <a class="sidebar-item highlight-item" routerLink="/cadastrarmoradores" routerLinkActive="active" (click)="autoCloseOnMobile()">
+      <i class="material-icons sidebar-icon">person_add</i>
+      <span>Cadastrar Moradores</span>
+    </a>
+  </nav>
+</aside>

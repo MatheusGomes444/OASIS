@@ -1,13 +1,166 @@
-<h1>Nome do Albergue</h1>
-<div class="container-center">
-<div class="img">
-<img src="https://96fmbauru.com.br/wp-content/uploads/2023/06/Albergue-carrossel-quem-somos.jpg" alt="Imagem do Albergue" style="width: 100%; max-width: 450px; height: 22rem;"/>
-</div>
+<div class="page">
 
-    <div class="button-container">
-      <div><button class="center-button" style="background-color: rgb(0, 117, 102); color: white" routerLink="/moradores">Moradores</button></div>
-      <div style="padding-top: 20px; padding-bottom: 20px;"><button class="center-button" style="background-color: rgb(0, 117, 102); color: white" routerLink="/">Contribuintes</button></div>
-      <div><button class="center-button" style="background-color: rgb(0, 117, 102); color: white" routerLink="/">Delatalhes Alojamentos</button></div>
+  <!-- Cabeçalho -->
+  <header class="page-header">
+
+    <div class="header-content">
+
+      <div>
+        <span class="breadcrumb">ALBERGUES / DETALHES</span>
+
+        <h1>Nome do Albergue</h1>
+
+        <p>
+          Informações e gerenciamento do albergue
+        </p>
+      </div>
+
+      <span class="status">
+        <span class="status-dot"></span>
+        Ativo
+      </span>
+
     </div>
-  </div>
 
+  </header>
+
+
+  <main class="container-center">
+
+    <!-- Informações principais -->
+    <section class="info-grid">
+
+      <div class="info-card">
+        <span class="info-label">Capacidade</span>
+        <strong>50</strong>
+        <small>vagas disponíveis</small>
+      </div>
+
+      <div class="info-card">
+        <span class="info-label">Moradores</span>
+        <strong>32</strong>
+        <small>pessoas cadastradas</small>
+      </div>
+
+      <div class="info-card">
+        <span class="info-label">Alojamentos</span>
+        <strong>10</strong>
+        <small>alojamentos cadastrados</small>
+      </div>
+
+      <div class="info-card">
+        <span class="info-label">Ocupação</span>
+        <strong>64%</strong>
+        <small>da capacidade utilizada</small>
+      </div>
+
+    </section>
+
+
+    <!-- Dados do albergue -->
+    <section class="details-card">
+
+      <div class="section-title">
+        <div>
+          <h2>Informações do Albergue</h2>
+          <p>Dados cadastrais e informações de contato</p>
+        </div>
+      </div>
+
+      <div class="details-grid">
+
+        <div class="detail">
+          <span>Nome</span>
+          <strong>Nome do Albergue</strong>
+        </div>
+
+        <div class="detail">
+          <span>Telefone</span>
+          <strong>(11) 99999-9999</strong>
+        </div>
+
+        <div class="detail">
+          <span>Endereço</span>
+          <strong>Rua Exemplo, 123</strong>
+        </div>
+
+        <div class="detail">
+          <span>Responsável</span>
+          <strong>Assistente Social</strong>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Ações -->
+    <section class="actions">
+
+      <h2>Gerenciamento</h2>
+
+      <div class="button-container">
+
+        <button
+          class="action-card"
+          routerLink="/moradores"
+        >
+
+          <div class="action-icon">
+            👥
+          </div>
+
+          <div class="action-content">
+            <strong>Moradores</strong>
+            <span>Consultar e gerenciar moradores</span>
+          </div>
+
+          <span class="arrow">→</span>
+
+        </button>
+
+
+        <button
+          class="action-card"
+          routerLink="/"
+        >
+
+          <div class="action-icon">
+            🤝
+          </div>
+
+          <div class="action-content">
+            <strong>Contribuintes</strong>
+            <span>Consultar contribuintes cadastrados</span>
+          </div>
+
+          <span class="arrow">→</span>
+
+        </button>
+
+
+        <button
+          class="action-card"
+          routerLink="/"
+        >
+
+          <div class="action-icon">
+            🏠
+          </div>
+
+          <div class="action-content">
+            <strong>Alojamentos</strong>
+            <span>Visualizar detalhes dos alojamentos</span>
+          </div>
+
+          <span class="arrow">→</span>
+
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</div>

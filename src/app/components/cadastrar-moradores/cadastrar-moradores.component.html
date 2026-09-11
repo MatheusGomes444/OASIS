@@ -1,126 +1,282 @@
-<h1>Cadastrar Moradores</h1>
+<div class="page">
 
-<div class="container">
-  <form [formGroup]="form" (ngSubmit)="cadastrarMorador()">
-    <!-- Sessão de cima -->
-    <div class="primeira">
-      <div class="form-group">
-        <label for="Nome">Nome:</label>
-        <input
-          type="text"
-          formControlName="Nome"
-          id="Nome"
-          class="form-control"
-        />
-      </div>
-      <div class="form-group">
-        <label for="CPF">CPF:</label>
-        <input
-          type="text"
-          formControlName="CPF"
-          id="CPF"
-          class="form-control"
-        />
-      </div>
-      <div class="form-group">
-        <label for="RG">RG:</label>
-        <input
-          type="text"
-          formControlName="RG"
-          id="RG"
-          class="form-control"
-        />
-      </div>
-     
+  <div class="header">
+    <div>
+      <h1>Cadastrar Morador</h1>
+      <p>Preencha as informações abaixo para realizar o cadastro.</p>
     </div>
 
-    <!-- Sessão do meio -->
-    <div class="segunda">
-      <div class="form-group">
-        <label for="Endereco">Endereço:</label>
-        <input
-          type="text"
-          formControlName="Endereco"
-          id="Endereco"
-          class="form-control"
-        />
+    <button
+      class="btn-voltar"
+      type="button"
+      (click)="voltar()">
+
+      <span class="material-icons">arrow_back</span>
+      Voltar
+    </button>
+  </div>
+
+  <form [formGroup]="form" (ngSubmit)="cadastrarMorador()" novalidate>
+
+    <!-- DADOS PESSOAIS -->
+
+    <div class="card">
+
+      <div class="card-title">
+        <span class="material-icons">person</span>
+        Informações Pessoais
       </div>
-      <div class="form-group">
-        <label for="Telefone">Telefone:</label>
-        <input
-          type="text"
-          formControlName="Telefone"
-          id="Telefone"
-          class="form-control"
-        />
+
+      <div class="grid">
+
+        <div class="form-group">
+          <label>Nome <span class="required">*</span></label>
+
+          <input
+            type="text"
+            class="form-control"
+            [class.invalid]="campoInvalido('Nome')"
+            formControlName="Nome"
+            placeholder="Digite o nome completo">
+
+          <span class="error-message" *ngIf="campoInvalido('Nome')">
+            <span class="material-icons">error_outline</span>
+            Nome é obrigatório.
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label>CPF</label>
+
+          <input
+            type="text"
+            class="form-control"
+            formControlName="CPF"
+            placeholder="000.000.000-00"
+            maxlength="14">
+
+        </div>
+
+        <div class="form-group">
+          <label>RG</label>
+
+          <input
+            type="text"
+            class="form-control"
+            formControlName="RG"
+            placeholder="Digite o RG">
+
+        </div>
+
+        <div class="form-group">
+          <label>Telefone</label>
+
+          <input
+            type="text"
+            class="form-control"
+            formControlName="Telefone"
+            placeholder="(11) 99999-9999">
+
+        </div>
+
+        <div class="form-group">
+          <label>Sexo</label>
+
+          <select
+            class="form-control"
+            formControlName="Sexo">
+
+            <option value="">Selecione</option>
+            <option>Masculino</option>
+            <option>Feminino</option>
+            <option>Outro</option>
+            <option>Não informado</option>
+
+          </select>
+
+        </div>
+
+        <div class="form-group">
+          <label>Idade</label>
+
+          <input
+            type="number"
+            class="form-control"
+            formControlName="Idade"
+            placeholder="Ex: 32"
+            min="0">
+
+        </div>
+
       </div>
-      <div class="form-group">
-        <label for="Sexo">Sexo:</label>
-        <input
-          type="text"
-          formControlName="Sexo"
-          id="Sexo"
-          class="form-control"
-        />
-      </div>
+
     </div>
 
-    <!-- Sessão final -->
-    <div class="terceira">
-      <div class="form-group">
-        <label for="Idade">Idade:</label>
-        <input
-          type="number"
-          formControlName="Idade"
-          id="Idade"
-          class="form-control"
-        />
+    <!-- ENDEREÇO -->
+
+    <div class="card">
+
+      <div class="card-title">
+
+        <span class="material-icons">
+          home
+        </span>
+
+        Localização
+
       </div>
-      <div class="form-group">
-        <label for="Nacionalidade">Nacionalidade:</label>
-        <input
-          type="text"
-          formControlName="Nacionalidade"
-          id="Nacionalidade"
-          class="form-control"
-        />
+
+      <div class="grid">
+
+        <div class="form-group full">
+
+          <label>Endereço</label>
+
+          <input
+            type="text"
+            class="form-control"
+            formControlName="Endereco"
+            placeholder="Rua, número, bairro...">
+
+        </div>
+
+        <div class="form-group">
+
+          <label>Nacionalidade</label>
+
+          <input
+            type="text"
+            class="form-control"
+            formControlName="Nacionalidade"
+            placeholder="Brasileira">
+
+        </div>
+
       </div>
-      <div class="form-group">
-        <label for="Observacoes">Observações:</label>
-        <input
-          type="text"
-          formControlName="Observacoes"
-          id="Observacoes"
-          class="form-control"
-        />
-      </div>
+
     </div>
 
-    <!-- Campo Alojamento -->
-    <div class="form-group">
-      <label for="AlojamentoId">Alojamento:</label>
-      <select formControlName="AlojamentoId" id="AlojamentoId" class="form-control">
-        <option *ngFor="let alojamento of alojamentos" [value]="alojamento.id">
-          {{ alojamento.nome }}
-        </option>
-      </select>
+    <!-- ALOJAMENTO -->
+
+    <div class="card">
+
+      <div class="card-title">
+
+        <span class="material-icons">
+          apartment
+        </span>
+
+        Informações do Alojamento
+
+      </div>
+
+      <div class="grid">
+
+        <div class="form-group full">
+
+          <label>Alojamento <span class="required">*</span></label>
+
+          <select
+            class="form-control"
+            [class.invalid]="campoInvalido('AlojamentoId')"
+            formControlName="AlojamentoId"
+            (focus)="onFocusAlojamento()"
+            [disabled]="carregandoAlojamentos">
+
+            <option value="">
+              {{ carregandoAlojamentos ? 'Carregando alojamentos...' : 'Selecione um alojamento' }}
+            </option>
+
+            <option
+              *ngFor="let alojamento of alojamentos"
+              [value]="alojamento.id">
+
+              {{ alojamento.nome }}
+
+            </option>
+
+          </select>
+
+          <span class="empty-message" *ngIf="alojamentosCarregados && !carregandoAlojamentos && alojamentos.length === 0">
+            <span class="material-icons">info_outline</span>
+            Nenhum alojamento encontrado.
+          </span>
+
+          <span class="error-message" *ngIf="campoInvalido('AlojamentoId')">
+            <span class="material-icons">error_outline</span>
+            Selecione um alojamento.
+          </span>
+
+        </div>
+
+      </div>
+
     </div>
 
-    <!-- Botões -->
-    <div class="btnbtn">
-      <button
-        type="submit"
-        class="btn btn-primary"
-      >
-        Salvar
-      </button>
+    <!-- OBSERVAÇÕES -->
+
+    <div class="card">
+
+      <div class="card-title">
+
+        <span class="material-icons">
+          description
+        </span>
+
+        Observações
+
+      </div>
+
+      <div class="grid">
+
+        <div class="form-group full">
+
+          <textarea
+            rows="6"
+            maxlength="500"
+            class="form-control textarea"
+            formControlName="Observacoes"
+            placeholder="Digite observações importantes sobre o morador...">
+          </textarea>
+
+          <span class="char-counter">
+            {{ (form.get('Observacoes')?.value?.length || 0) }}/500
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- BOTÕES -->
+
+    <div class="footer-buttons">
+
       <button
         type="button"
-        class="btn btn-primary"
-        (click)="voltar()"
-      >
-        Voltar
+        class="cancel"
+        [disabled]="salvando"
+        (click)="voltar()">
+
+        Cancelar
+
       </button>
+
+      <button
+        type="submit"
+        class="save"
+        [disabled]="salvando">
+
+        <span class="material-icons spin" *ngIf="salvando">progress_activity</span>
+        <span class="material-icons" *ngIf="!salvando">save</span>
+
+        {{ salvando ? 'Salvando...' : 'Salvar Morador' }}
+
+      </button>
+
     </div>
+
   </form>
+
 </div>

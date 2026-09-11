@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root', // esta lincado ao componente index.html
+  selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent { // chama o AppComponente faz um link
- 
+export class AppComponent {
+  isSidebarOpen = true; // Mantém sincronizado
 }

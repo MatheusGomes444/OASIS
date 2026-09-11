@@ -1,0 +1,31 @@
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #F8FAFC;
+}
+
+.main-content {
+  flex: 1;
+  margin-top: 64px;
+  margin-left: 0;
+  padding: 0;
+  width: 100%;
+  transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Quando no Desktop e o menu estiver ABERTO, empurra o Dashboard */
+@media (min-width: 769px) {
+  .app-wrapper.sidebar-open .main-content {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-top: 58px;
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+}

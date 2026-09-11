@@ -1,27 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
+  isSidebarOpen = true; // Inicia aberto no desktop
+  @Output() sidebarToggled = new EventEmitter<boolean>();
 
-  username = 'Administrador';
-
-  sidebarCollapsed = false;
-
-  ngOnInit(): void {
-
-    this.username =
-      localStorage.getItem('username') || 'Administrador';
-
+  toggleSidebar() {
+    this.isSidebarOpen = !this.isSidebarOpen;
+    this.sidebarToggled.emit(this.isSidebarOpen);
   }
 
-  toggleSidebar(){
-
-    this.sidebarCollapsed = !this.sidebarCollapsed;
-
+  autoCloseOnMobile() {
+    if (window.innerWidth <= 768) {
+      this.isSidebarOpen = false;
+      this.sidebarToggled.emit(false);
+    }
   }
-
 }

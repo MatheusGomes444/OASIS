@@ -1,13 +1,21 @@
-<h1>Moradores</h1>
+<div class="page">
+<header class="page-header">
 
-<input
-  type="text"
-  name="text"
-  placeholder="Pesquisar"
-  class="input"
-  [(ngModel)]="searchTerm"
-  (input)="onSearch()"
->
+    <div class="header-content">
+
+      <div>
+        <span class="breadcrumb">ALBERGUES / MORADORES</span>
+
+        <h1>Moradores do Albergue</h1>
+
+        <p>
+          Informações e gerenciamento dos moradores
+        </p>
+      </div>
+
+    </div>
+
+  </header>
 
 <div class="container">
   <div *ngFor="let morador of moradores" class="morador-item">
@@ -27,4 +35,5 @@
 
     </div>
   </div>
+</div>
 </div>
